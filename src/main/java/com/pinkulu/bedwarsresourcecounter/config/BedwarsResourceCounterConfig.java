@@ -27,6 +27,12 @@ public class BedwarsResourceCounterConfig extends Config {
     )
     public String info;
 
+    @Checkbox(
+            name = "Render Icons"
+    )
+    public static boolean renderIcons = false;
+
+
     @Info(
             text = "A Mod by Pinkulu(Luna)",
             type = InfoType.WARNING,

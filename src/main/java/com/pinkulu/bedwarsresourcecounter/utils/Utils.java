@@ -15,7 +15,7 @@ public class Utils {
         return location.getGameType().equals(LocrawInfo.GameType.BEDWARS);
     }
 
-    public static String formatRenderString(String string, String name, int inventoryCount, int chestCount) {
+    public static String formatRenderString(String string, String name, int inventoryCount, int chestCount, boolean multiLine) {
         String formattedString = string.replace("{%i}", String.valueOf(inventoryCount));
         formattedString = formattedString.replace("{%e}", String.valueOf(chestCount));
         formattedString = formattedString.replace("{%t}", String.valueOf(inventoryCount + chestCount));
@@ -33,7 +33,9 @@ public class Utils {
                 }
             }
         } catch (Exception ignored) {}
-
+        if (multiLine) {
+            formattedString = formattedString + " {" + name.charAt(0) + "}";
+        }
         return formattedString;
     }
 
